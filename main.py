@@ -102,6 +102,6 @@ class ScraperApp(ctk.CTk):
             self.text_log.insert('end', f"Error: {e}\n")
 
 if __name__ == "__main__":
-    main()
-    # app = ScraperApp()
-    # app.mainloop()
+    #main()
+    app = ScraperApp()
+    app.mainloop()
