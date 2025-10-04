@@ -4,7 +4,7 @@ from scraper.downloader import descargar_comprobantes_pw
 from utils.logger import logger
 from config.settings import config
 from utils.file_manager import get_last_downloaded, is_already_downloaded
-import customtkinter as ctk
+# import customtkinter as ctk
 import threading
 import os
 
@@ -60,46 +60,46 @@ def main():
                         quincena = "01"  # Reiniciar quincena a 01
 
 
-class ScraperApp(ctk.CTk):
-    def __init__(self):
-        super().__init__()
-        self.title("Descargador Web")
-        self.geometry("500x400")
+# class ScraperApp(ctk.CTk):
+#     def __init__(self):
+#         super().__init__()
+#         self.title("Descargador Web")
+#         self.geometry("500x400")
         
-        ctk.set_appearance_mode("dark")
-        ctk.set_default_color_theme("blue")
+#         ctk.set_appearance_mode("dark")
+#         ctk.set_default_color_theme("blue")
         
-        self.label = ctk.CTkLabel(self, text="Introduce tus credenciales")
-        self.label.pack(pady=10)
+#         self.label = ctk.CTkLabel(self, text="Introduce tus credenciales")
+#         self.label.pack(pady=10)
         
-        self.entry_user = ctk.CTkEntry(self, placeholder_text="Usuario")
-        self.entry_user.pack(pady=5)
+#         self.entry_user = ctk.CTkEntry(self, placeholder_text="Usuario")
+#         self.entry_user.pack(pady=5)
         
-        self.entry_pass = ctk.CTkEntry(self, placeholder_text="Contraseña", show="*")
-        self.entry_pass.pack(pady=5)
+#         self.entry_pass = ctk.CTkEntry(self, placeholder_text="Contraseña", show="*")
+#         self.entry_pass.pack(pady=5)
         
-        self.button_start = ctk.CTkButton(self, text="Iniciar Descarga", command=self.start_scraping)
-        self.button_start.pack(pady=10)
+#         self.button_start = ctk.CTkButton(self, text="Iniciar Descarga", command=self.start_scraping)
+#         self.button_start.pack(pady=10)
         
-        self.text_log = ctk.CTkTextbox(self, height=150)
-        self.text_log.pack(pady=10, padx=10, fill='both', expand=True)
+#         self.text_log = ctk.CTkTextbox(self, height=150)
+#         self.text_log.pack(pady=10, padx=10, fill='both', expand=True)
         
-    def start_scraping(self):
-        user = self.entry_user.get()
-        password = self.entry_pass.get()
+#     def start_scraping(self):
+#         user = self.entry_user.get()
+#         password = self.entry_pass.get()
         
-        self.text_log.insert('end', "Iniciando descarga...\n")
+#         self.text_log.insert('end', "Iniciando descarga...\n")
         
-        thread = threading.Thread(target=self.run_scraper, args=(user, password))
-        thread.start()
+#         thread = threading.Thread(target=self.run_scraper, args=(user, password))
+#         thread.start()
         
-    def run_scraper(self, user, password):
-        try:
-            #resultado = descargar_pagina(user, password)  # Llama a tu función de descarga real
-            resultado = "SI"  # Aquí llamas a tu función principal de scraping
-            self.text_log.insert('end', f"Descarga finalizada: {resultado}\n")
-        except Exception as e:
-            self.text_log.insert('end', f"Error: {e}\n")
+#     def run_scraper(self, user, password):
+#         try:
+#             #resultado = descargar_pagina(user, password)  # Llama a tu función de descarga real
+#             resultado = "SI"  # Aquí llamas a tu función principal de scraping
+#             self.text_log.insert('end', f"Descarga finalizada: {resultado}\n")
+#         except Exception as e:
+#             self.text_log.insert('end', f"Error: {e}\n")
 
 if __name__ == "__main__":
     main()
